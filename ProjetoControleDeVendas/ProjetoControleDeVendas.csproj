@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{404E4A08-2771-4C48-8501-D34327A782A4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProjetoControleDeVendas</RootNamespace>
+    <AssemblyName>ProjetoControleDeVendas</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.19.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.19\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.19\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Conexao\ConnectionFactory.cs" />
+    <Compile Include="DAO\ClienteDAO.cs" />
+    <Compile Include="DAO\FornecedorDAO.cs" />
+    <Compile Include="DAO\FuncionarioDAO.cs" />
+    <Compile Include="DAO\ItemVendaDAO.cs" />
+    <Compile Include="DAO\ProdutoDAO.cs" />
+    <Compile Include="DAO\VendaDAO.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Cliente.cs" />
+    <Compile Include="Model\Fornecedor.cs" />
+    <Compile Include="Model\Funcionario.cs" />
+    <Compile Include="Model\Helpers.cs" />
+    <Compile Include="Model\ItemVenda.cs" />
+    <Compile Include="Model\Produto.cs" />
+    <Compile Include="Model\Venda.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\FrmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmClientes.Designer.cs">
+      <DependentUpon>FrmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmDetalhes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmDetalhes.Designer.cs">
+      <DependentUpon>FrmDetalhes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmFornecedor.Designer.cs">
+      <DependentUpon>FrmFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmFuncionarios.Designer.cs">
+      <DependentUpon>FrmFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmHistorico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmHistorico.Designer.cs">
+      <DependentUpon>FrmHistorico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmMenu.Designer.cs">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmPagamento.Designer.cs">
+      <DependentUpon>FrmPagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmProduto.Designer.cs">
+      <DependentUpon>FrmProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmVendas.Designer.cs">
+      <DependentUpon>FrmVendas.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\FrmClientes.resx">
+      <DependentUpon>FrmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmDetalhes.resx">
+      <DependentUpon>FrmDetalhes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmFornecedor.resx">
+      <DependentUpon>FrmFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmFuncionarios.resx">
+      <DependentUpon>FrmFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmHistorico.resx">
+      <DependentUpon>FrmHistorico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmMenu.resx">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmPagamento.resx">
+      <DependentUpon>FrmPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmProduto.resx">
+      <DependentUpon>FrmProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmVendas.resx">
+      <DependentUpon>FrmVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box_package_icon_232146.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business_office_group_management_partnership_teamwork_team_icon_232671.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\curriculum_profile_biodata_resume_portofolio_cv_vitae_icon_232635.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\income_money_bag_investment_finance_revenue_profit_dollar_icon_232660.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\presentation_meeting_chat_talk_conversation_conference_communication_icon_232642.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_cog_icon_232492.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roberto-h-qToVxSYXPYU-unsplash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BIN_1194_oJerOnnP2O4RM8FWHcGZiZisQupJv3AmqU8gJ36tiWGPfu1oL3hq48xEVS1UgDaf.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
